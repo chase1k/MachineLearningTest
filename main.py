@@ -13,13 +13,13 @@ import tensorflow as tf
 
 model = tf.keras.models.Sequential()
 
-model.add(tf.keras.layers.Dense(1024, activation='sigmoid'))
-model.add(tf.keras.layers.Dense(1024, activation='sigmoid'))
+model.add(tf.keras.layers.Dense(1024, activation='sigmoid')) #Change the number here and 1 below
+model.add(tf.keras.layers.Dense(1024, activation='sigmoid')) #Make sure it is a power of two
 model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # model.summary()
 
-model.fit(x_train, y_train, epochs=100)
+model.fit(x_train, y_train, epochs=100) #Change to alter how many times it runs after changing
 model.evaluate(x_test, y_test)
